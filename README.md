@@ -12,5 +12,6 @@ The toolset is geared to abstract the validation and rendering portions into sel
 
 We hope to take like %30-%50 of the pain of handcrafting good html forms.
 
-##MORE STUFF SOMEDAY
+##Requirements
+Right now this pretty much is targeting nodejs and the browser. On the nodejs side - we're going to utilize [jsdom](https://github.com/tmpvar/jsdom) and something like [ejs](http://embeddedjs.com/) or [jade](http://jade-lang.com) for rendering templates. Client side we can either reuse the ejs, or utilize handlerbars.js or something. Both sides will probably use jquery for dom manipulation. 
 
