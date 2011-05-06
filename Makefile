@@ -5,19 +5,18 @@ BUILDDIR = dist
 
 all: build
 
-build: json-forms.js
-	mkdir -p $(BUILDDIR)
-	uglifyjs -nc lib/json-forms.js > $(BUILDDIR)/json-forms.min.js
-	gzip -c lib/json-forms.min.js > $(BUILDDIR)/json-forms.min.js.gzip
+build:
+	coffee -c -o $(BUILDDIR) src/json-forms.coffee
+	uglifyjs -nc $(BUILDDIR)/json-forms.js > $(BUILDDIR)/json-forms.min.js
+	gzip -c $(BUILDDIR)/json-forms.min.js > $(BUILDDIR)/json-forms.min.js.gzip
 
 test:
 	nodeunit test/test.js
 
 clean:
-	rm $(BUILDDIR)/json-forms.min.js
-	rm $(BUILDDIR)/json-forms.min.js.gzip
+	rm -rf $(BUILDDIR)
 
-lint:
-	nodelint --config nodelint.cfg lib/json-forms.js
+lint: build
+	nodelint --config nodelint.cfg $(BUILDDIR)/json-forms.js
 
 .PHONY: clean test lint build all
