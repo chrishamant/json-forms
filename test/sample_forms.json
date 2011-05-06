@@ -1,0 +1,64 @@
+[{
+  "enctype" : "application/x-www-form-urlencoded",
+  "name" : "formName",
+  "attrs" : {},
+  "method" : "POST",
+  "action" : "/url",
+  "fields" : [{
+    "type" : "hidden",
+    "value" : "abc",
+    "name" : "hiddenone",
+    "attrs" : {
+      "id" : "hiddenone",
+      "testdata" : [1,2,3]
+    }
+  },{
+    "type" : "password",
+    "required" : true,
+    "label" : "Password",
+    "placeholder" : "Your Password Here",
+    "name" : "password",
+    "placeholder" : "Your pasword",
+    "helper_msg" : "Please enter your password here"
+  },{
+    "type":"select",
+    "required":true,
+    "multiple" : false,
+    "options":[
+      {"text" : "Small", "value" : "S", "selected" : true},
+      {"text" : "Medium", "value" : "M"},
+      {"text" : "Large", "value" : "L"},
+      {"text" : "X-Extra", "value" : "XL"}
+    ],
+    "label":"Shirt Size.",
+    "name" : "shirt_size",
+    "attrs" : {"id" : "shirt_side","somedata" : 123},
+    "helper_msg" : "Please enter Shirt Size",
+    "error_msg" : "some error message"
+  },{
+    "type":"text",
+    "required":true,
+    "label":"Name",
+    "name" : "name",
+    "autofocus" : true,
+    "attrs" : {"id" : "name_field","somedata" : 123},
+    "placeholder" : "Your Name",
+    "helper_msg" : "Please enter your name",
+    "error_msg" : "some error message",
+    "test" : "^{d}+$"
+  },{
+    "type":"radioset",
+    "required":true,
+    "options":[
+      {"text" : "Small", "value" : "S", "selected" : true},
+      {"text" : "Medium", "value" : "M"},
+      {"text" : "Large", "value" : "L"},
+      {"text" : "X-Extra", "value" : "XL"}
+    ],
+    "label":"Shirt Size.",
+    "name" : "shirt_size",
+    "attrs" : {"id" : "shirt_side","somedata" : 123},
+    "helper_msg" : "Please enter Shirt Size",
+    "error_msg" : "some error message"
+  }]
+}]
